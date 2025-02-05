@@ -11,11 +11,11 @@ for SQL_FILE in $SQL_DIR/*.sql; do
 
     # Crear la base de datos si no existe
     echo "Creando la base de datos $DB_NAME..."
-    psql -h $PG_HOST -U $PG_USER -p $PG_PORT -c "CREATE DATABASE $DB_NAME;"
+    psql -c "CREATE DATABASE $DB_NAME;"
 
     # Ejecutar el archivo SQL en la base de datos correspondiente
     echo "Ejecutando el archivo $SQL_FILE en la base de datos $DB_NAME..."
-    psql -h $PG_HOST -U $PG_USER -p $PG_PORT -d $DB_NAME -f $SQL_FILE
+    psql -d $DB_NAME -f $SQL_FILE
 
     # Verificar si la ejecución fue exitosa
     if [ $? -eq 0 ]; then
