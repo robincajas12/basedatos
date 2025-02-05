@@ -2,7 +2,7 @@
 PG_HOST="localhost"          # Dirección de tu servidor PostgreSQL
 PG_USER="postgres"         # Tu nombre de usuario de PostgreSQL
 PG_PORT="5432"               # Puerto de PostgreSQL (por defecto es 5432)
-SQL_DIR="."  # Directorio donde están tus archivos .sql
+SQL_DIR="."/bases  # Directorio donde están tus archivos .sql
 
 # Recorre cada archivo .sql en el directorio especificado
 for SQL_FILE in $SQL_DIR/*.sql; do
@@ -24,4 +24,7 @@ for SQL_FILE in $SQL_DIR/*.sql; do
         echo "Hubo un error al ejecutar el archivo SQL $SQL_FILE en $DB_NAME."
     fi
 done
+
+
+
 
